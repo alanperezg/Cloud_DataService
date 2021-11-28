@@ -8,6 +8,7 @@ const ProviderAccountController = require('./controllers/ProviderAccountControll
 const ServiceController = require('./controllers/ServiceController')
 
 dotenv.config()
+const PORT = process.env.TOKEN_KEY || 3000
 const app = express();
 app.use(cors());
 app.use(bodyParser.json())
@@ -21,4 +22,4 @@ app.post('/provider/token', ProviderAccountController.getTokenByAuth);
 //Services Enpoints
 app.get('/services', ServiceController.getServicesCatalogue)
 
-app.listen(3000, () => console.log("App listening on 3000"));
+app.listen(PORT, () => console.log(`App listening on ${PORT}`));
