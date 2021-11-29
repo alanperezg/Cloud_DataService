@@ -8,7 +8,7 @@ const ProviderAccountController = require('./controllers/ProviderAccountControll
 const ServiceController = require('./controllers/ServiceController')
 
 dotenv.config()
-const PORT = process.env.TOKEN_KEY || 3000
+const PORT = process.env.PORT || 3000
 const app = express();
 app.use(cors());
 app.use(bodyParser.json())
